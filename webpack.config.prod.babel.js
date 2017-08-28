@@ -5,13 +5,13 @@ import DashboardPlugin from 'webpack-dashboard/plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import HtmlWebpackHarddiskPlugin from 'html-webpack-harddisk-plugin';
 import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
+import HtmlWebpackInlineSourcePlugin from 'html-webpack-inline-source-plugin';
 
 const htmlPath = path.resolve(__dirname, 'public/index.prod.html');
 const appPath = path.resolve(__dirname, 'src/index.jsx');
 const buildPath = path.resolve(__dirname, 'dist');
 
 const config = {
-  devtool: 'eval-source-map',
   entry: {
     app: appPath
   },
@@ -90,8 +90,10 @@ const config = {
     new HtmlWebpackPlugin({
       inject: true,
       template: htmlPath,
+      inlineSource: '.(app.bundle.js)$'
     }),
     new HtmlWebpackHarddiskPlugin(),
+    new HtmlWebpackInlineSourcePlugin(),
     new FaviconsWebpackPlugin({
       logo: path.resolve(__dirname, 'public/logo.png'),
       prefix: 'icons-[hash]/',

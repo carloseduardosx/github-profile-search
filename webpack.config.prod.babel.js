@@ -4,8 +4,9 @@ import webpack from 'webpack';
 import DashboardPlugin from 'webpack-dashboard/plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import HtmlWebpackHarddiskPlugin from 'html-webpack-harddisk-plugin';
+import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
 
-const htmlPath = path.resolve(__dirname, 'public/index.html');
+const htmlPath = path.resolve(__dirname, 'public/index.prod.html');
 const appPath = path.resolve(__dirname, 'src/index.jsx');
 const buildPath = path.resolve(__dirname, 'dist');
 
@@ -90,7 +91,21 @@ const config = {
       inject: true,
       template: htmlPath,
     }),
-    new HtmlWebpackHarddiskPlugin()
+    new HtmlWebpackHarddiskPlugin(),
+    new FaviconsWebpackPlugin({
+      logo: path.resolve(__dirname, 'public/logo.png'),
+      prefix: 'icons-[hash]/',
+      statsFilename: 'iconstats-[hash].json',
+      persistentCache: true,
+      inject: true,
+      title: 'GitHub Profile Search',
+      icons: {
+        android: true,
+        appleIcon: true,
+        appleStartup: true,
+        favicons: true
+      }
+    })
   ]
 };
 

@@ -1,0 +1,11 @@
+{
+	"sourceMaps": true,
+	"presets": [
+		"es2015",
+        "react"
+	],
+	"plugins": [
+		["transform-decorators-legacy"],
+		["transform-react-jsx", { "pragma": "h" }]
+	]
+}

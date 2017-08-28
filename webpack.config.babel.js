@@ -89,6 +89,7 @@ const config = {
     new HtmlWebpackPlugin({
       inject: true,
       template: htmlPath,
+      alwaysWriteToDisk: true
     }),
     new HtmlWebpackHarddiskPlugin()
   ]

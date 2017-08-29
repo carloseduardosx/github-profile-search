@@ -3,6 +3,11 @@
     "js",
     "jsx"
   ],
+  "testRegex": ".src/.*/*.test.(js|jsx)$",
+  "collectCoverageFrom": [
+      "src/**/*.(js|jsx)",
+      "!**/src/test/**"
+  ],
   "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/test/mock/fileMock.js",
       "react-dom/server": "preact-render-to-string",
@@ -13,8 +18,5 @@
   },
   "moduleDirectories": [
     "node_modules"
-  ],
-  "collectCoverageFrom": [
-      "app/**/*.{js,jsx}"
   ]
 }

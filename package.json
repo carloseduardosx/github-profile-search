@@ -58,7 +58,7 @@
     "lint:fix": "eslint --ext .js --ext .jsx --fix src",
     "start": "webpack-dashboard -- webpack-dev-server",
     "build": "webpack -p",
-    "test": "jest --config jest.config.json",
+    "test": "jest --config jest.config.json --coverage",
     "test:watch": "jest --config jest.config.json --watch"
   }
 }

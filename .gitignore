@@ -12,6 +12,7 @@
 
 # generated files
 /src/**/*.css
+/coverage
 .eslintcache
 yarn-debug.log*
 yarn-error.log*

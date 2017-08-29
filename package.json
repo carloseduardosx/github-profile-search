@@ -14,6 +14,7 @@
     "autoprefixer": "7.1.2",
     "babel-core": "6.25.0",
     "babel-eslint": "7.2.3",
+    "babel-jest": "^20.0.3",
     "babel-loader": "7.1.1",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-plugin-transform-react-jsx": "^6.24.1",
@@ -24,6 +25,7 @@
     "browser-sync": "^2.18.13",
     "browser-sync-webpack-plugin": "^1.2.0",
     "css-loader": "0.28.4",
+    "enzyme": "^2.9.1",
     "eslint": "^4.2.0",
     "eslint-config-airbnb": "^15.0.2",
     "eslint-plugin-import": "^2.7.0",
@@ -36,9 +38,14 @@
     "html-webpack-harddisk-plugin": "^0.1.0",
     "html-webpack-inline-source-plugin": "^0.0.9",
     "html-webpack-plugin": "2.29.0",
+    "jest": "^20.0.4",
     "node-sass": "^4.5.3",
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.6",
+    "preact-compat-enzyme": "^0.2.5",
+    "preact-render-to-string": "^3.6.3",
+    "preact-test-utils": "^0.1.3",
+    "preact-transition-group": "^1.1.1",
     "sass-loader": "^6.0.6",
     "style-loader": "0.18.2",
     "url-loader": "0.5.9",
@@ -50,6 +57,8 @@
     "lint": "eslint --cache --ext .js --ext .jsx src",
     "lint:fix": "eslint --ext .js --ext .jsx --fix src",
     "start": "webpack-dashboard -- webpack-dev-server",
-    "build": "webpack -p"
+    "build": "webpack -p",
+    "test": "jest --config jest.config.json",
+    "test:watch": "jest --config jest.config.json --watch"
   }
 }

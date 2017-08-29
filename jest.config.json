@@ -1,0 +1,20 @@
+{
+  "moduleFileExtensions": [
+    "js",
+    "jsx"
+  ],
+  "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/test/mock/fileMock.js",
+      "react-dom/server": "preact-render-to-string",
+      "react-addons-test-utils": "preact-test-utils",
+      "react-addons-transition-group": "preact-transition-group",
+      "^react$": "preact-compat-enzyme",
+      "^react-dom$": "preact-compat-enzyme"
+  },
+  "moduleDirectories": [
+    "node_modules"
+  ],
+  "collectCoverageFrom": [
+      "app/**/*.{js,jsx}"
+  ]
+}

@@ -1,8 +1,9 @@
 
-import { h, render } from 'preact';
+import { h } from 'preact';
+import { mount } from 'enzyme';
 import Home from '../Home';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  render(<Home />, div);
+  mount(<Home />, div);
 });

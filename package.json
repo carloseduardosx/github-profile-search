@@ -57,7 +57,7 @@
     "lint": "eslint --cache --ext .js --ext .jsx src",
     "lint:fix": "eslint --ext .js --ext .jsx --fix src",
     "start": "webpack-dashboard -- webpack-dev-server",
-    "build": "webpack -p",
+    "build": "webpack -p --config webpack.config.prod.babel.js",
     "test": "jest --config jest.config.json --coverage",
     "test:watch": "jest --config jest.config.json --watch",
     "test:codecov": "yarn run test && ./scripts/send_codecov_reports.sh"

@@ -4,6 +4,7 @@ import webpack from 'webpack';
 import DashboardPlugin from 'webpack-dashboard/plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import HtmlWebpackHarddiskPlugin from 'html-webpack-harddisk-plugin';
+import BrowserSyncPlugin from 'browser-sync-webpack-plugin';
 
 const htmlPath = path.resolve(__dirname, 'public/index.html');
 const appPath = path.resolve(__dirname, 'src/index.jsx');
@@ -19,7 +20,11 @@ const config = {
     filename: '[name].bundle.js'
   },
   devServer: {
-    contentBase: path.resolve(__dirname, 'src'),
+    overlay: true,
+    hotOnly: true,
+    inline: true,
+    port: 3100,
+    historyApiFallback: true
   },
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -86,12 +91,20 @@ const config = {
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.optimize.ModuleConcatenationPlugin(),
+    new HtmlWebpackHarddiskPlugin(),
     new HtmlWebpackPlugin({
       inject: true,
       template: htmlPath,
       alwaysWriteToDisk: true
     }),
-    new HtmlWebpackHarddiskPlugin()
+    new BrowserSyncPlugin({
+      host: 'localhost',
+      port: 3000,
+      proxy: 'http://localhost:3100/'
+    },
+    {
+      reload: false
+    })
   ]
 };
 

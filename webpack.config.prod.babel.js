@@ -92,7 +92,7 @@ const config = {
     new HtmlWebpackPlugin({
       inject: true,
       template: htmlPath,
-      inlineSource: '.(app.bundle.js)$'
+      inlineSource: 'app.bundle.js'
     }),
     new HtmlWebpackHarddiskPlugin(),
     new HtmlWebpackInlineSourcePlugin(),

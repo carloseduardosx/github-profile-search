@@ -6,6 +6,8 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import HtmlWebpackHarddiskPlugin from 'html-webpack-harddisk-plugin';
 import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
 import HtmlWebpackInlineSourcePlugin from 'html-webpack-inline-source-plugin';
+import WebpackOnBuildPlugin from 'on-build-webpack';
+import { exec } from 'child_process'
 
 const htmlPath = path.resolve(__dirname, 'public/index.prod.html');
 const appPath = path.resolve(__dirname, 'src/index.jsx');
@@ -107,7 +109,8 @@ const config = {
         appleStartup: true,
         favicons: true
       }
-    })
+    }),
+    new WebpackOnBuildPlugin((stats) => !stats.compilation.errors.length && process.exit(0))
   ]
 };
 

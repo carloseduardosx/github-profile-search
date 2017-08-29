@@ -47,6 +47,8 @@
     "webpack-dev-server": "2.7.1"
   },
   "scripts": {
+    "lint": "eslint --cache --ext .js --ext .jsx src",
+    "lint:fix": "eslint --ext .js --ext .jsx --fix src",
     "start": "webpack-dashboard -- webpack-dev-server",
     "build": "webpack -p"
   }

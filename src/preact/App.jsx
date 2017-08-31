@@ -2,10 +2,10 @@ import { h } from 'preact';
 import { Router } from 'preact-router';
 import Home from './home';
 
-const App = ({ store }) => (
+const App = () => (
   <div>
     <Router>
-      <Home default store={store} path="/" />
+      <Home default path="/" />
     </Router>
   </div>
 );

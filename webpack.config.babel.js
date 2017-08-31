@@ -40,7 +40,8 @@ const config = {
             cacheDirectory: true,
             presets: [
               'es2015',
-              'react'
+              'react',
+              'stage-2'
             ],
             plugins: [
               ['transform-decorators-legacy'],

@@ -38,7 +38,7 @@ const config = {
             presets: [
               'es2015',
               'react',
-              'stage-2'
+              'stage-0'
             ],
             plugins: [
               ['transform-runtime', {

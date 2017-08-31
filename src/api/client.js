@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { constants as gitHubConstants } from './github';
+import { gitHubApiUrl } from './constants';
 
 const gitHubConfig = {
   headers: {
@@ -9,7 +9,7 @@ const gitHubConfig = {
 
 export const get = (baseUrl, endpoint, config) => {
   switch (baseUrl) {
-    case gitHubConstants.apiUrl:
+    case gitHubApiUrl:
       return axios.get(`${baseUrl}/${endpoint}`, config || gitHubConfig);
     default:
       return axios.get(`${baseUrl}/${endpoint}`, config);

@@ -1,1 +1,10 @@
 @import './searchInput.scss';
+@import './button.scss';
+
+.home__div--container {
+    width: inherit;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

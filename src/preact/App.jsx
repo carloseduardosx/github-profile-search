@@ -1,6 +1,6 @@
 import { h } from 'preact';
 import { Router } from 'preact-router';
-import Home from './home/Home';
+import Home from './home';
 
 const App = ({ store }) => (
   <div>

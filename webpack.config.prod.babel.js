@@ -41,6 +41,12 @@ const config = {
               'stage-2'
             ],
             plugins: [
+              ['transform-runtime', {
+                helpers: false,
+                polyfill: false,
+                regenerator: true,
+                moduleName: 'babel-runtime'
+              }],
               ['transform-decorators-legacy'],
               ['transform-react-jsx', { pragma: 'h' }]
             ]

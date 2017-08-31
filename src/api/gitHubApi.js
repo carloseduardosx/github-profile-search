@@ -1,10 +1,10 @@
 import * as client from './client';
 import { gitHubApiUrl as apiUrl } from './constants';
 
-export function getUser({ userName }) {
-  client.get(apiUrl, `users/${userName}`);
+export function fetchUser({ userName }) {
+  return client.get(apiUrl, `users/${userName}`).then(result => result);
 }
 
-export function getUserRepositories({ userName }) {
-  client.get(apiUrl, `users/${userName}/repos`);
+export function fetchUserRepositories({ userName }) {
+  return client.get(apiUrl, `users/${userName}/repos`);
 }

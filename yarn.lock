@@ -348,7 +348,7 @@ babel-code-frame@^6.11.0, babel-code-frame@^6.22.0, babel-code-frame@^6.26.0:
     esutils "^2.0.2"
     js-tokens "^3.0.2"
 
-babel-core@6.25.0, babel-core@^6.0.0, babel-core@^6.24.0:
+babel-core@6.25.0, babel-core@^6.0.0:
   version "6.25.0"
   resolved "https://registry.yarnpkg.com/babel-core/-/babel-core-6.25.0.tgz#7dd42b0463c742e9d5296deb3ec67a9322dad729"
   dependencies:
@@ -372,7 +372,7 @@ babel-core@6.25.0, babel-core@^6.0.0, babel-core@^6.24.0:
     slash "^1.0.0"
     source-map "^0.5.0"
 
-babel-core@^6.26.0:
+babel-core@^6.24.0, babel-core@^6.26.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-core/-/babel-core-6.26.0.tgz#af32f78b31a6fcef119c87b0fd8d9753f03a0bb8"
   dependencies:
@@ -1876,8 +1876,8 @@ core-js@^1.0.0:
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-1.2.7.tgz#652294c14651db28fa93bd2d5ff2983a4f08c636"
 
 core-js@^2.4.0, core-js@^2.5.0:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.5.0.tgz#569c050918be6486b3837552028ae0466b717086"
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.5.1.tgz#ae6874dc66937789b80754ff5428df66819ca50b"
 
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"

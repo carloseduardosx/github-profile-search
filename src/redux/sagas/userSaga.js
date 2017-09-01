@@ -1,4 +1,4 @@
-import { takeLatest, all, put, call } from 'redux-saga/effects';
+import { takeEvery, all, put, call } from 'redux-saga/effects';
 import { route } from 'preact-router';
 import { callNames } from '../../api';
 import { user, connectivity } from '../modules';
@@ -11,13 +11,22 @@ function* fetchUserRepositories({ payload: { args: { userName } } }) {
   ));
 }
 
-function* redirectToProfileAndFetchRepositories(action) {
+function* fetchUserNotes({ payload: { args: { userName } } }) {
+  yield put(connectivity.actions.requestApiCall(
+    callNames.FETCH_NOTES,
+    { userName },
+    user.actions.FETCH_USER_NOTES
+  ));
+}
+
+function* redirectToProfileAndFetchDependencies(action) {
   route('/profile');
   yield call(fetchUserRepositories, action);
+  yield call(fetchUserNotes, action);
 }
 
 function* watchFetchUserSucceeded() {
-  yield takeLatest(user.actions.FETCH_USER.SUCCEEDED, redirectToProfileAndFetchRepositories);
+  yield takeEvery(user.actions.FETCH_USER.SUCCEEDED, redirectToProfileAndFetchDependencies);
 }
 
 function* userSaga() {

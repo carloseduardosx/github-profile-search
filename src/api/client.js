@@ -15,3 +15,12 @@ export const get = (baseUrl, endpoint, config) => {
       return axios.get(`${baseUrl}/${endpoint}`, config);
   }
 };
+
+export const put = (baseUrl, endpoint, body, config) => {
+  switch (baseUrl) {
+    case gitHubApiUrl:
+      return axios.put(`${baseUrl}/${endpoint}`, body, config || gitHubConfig);
+    default:
+      return axios.put(`${baseUrl}/${endpoint}`, body, config);
+  }
+};

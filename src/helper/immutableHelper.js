@@ -7,3 +7,5 @@ export const asImmutable = (obj) => (
 export const asJS = (obj) => (
   obj && Iterable.isIterable(obj) ? obj.toJS() : obj
 );
+
+export const emptyList = asImmutable([]);

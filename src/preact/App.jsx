@@ -4,6 +4,7 @@ import Home from './home';
 import Profile from './profile';
 import Toolbar from './toolbar';
 import Repos from './repos';
+import Notes from './notes';
 
 const App = () => (
   <div>
@@ -12,6 +13,7 @@ const App = () => (
       <Home default path="/" />
       <Profile path="/profile" />
       <Repos path="/repos" />
+      <Notes path="/notes" />
     </Router>
   </div>
 );

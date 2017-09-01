@@ -1,8 +1,8 @@
 import { h } from 'preact';
 
-const Button = ({ label, onClick }) => (
+const Button = ({ label, onClick, className }) => (
   <button
-    className="button--material"
+    className={className ? `${className} button--material` : 'button--material'}
     type="button"
     onClick={onClick}
   >

@@ -1,0 +1,9 @@
+@import './repository.scss';
+
+.repos__div--container {
+  display: flex;
+  margin-top: 70px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

@@ -36,7 +36,13 @@ const UserInfo = ({ user }) => (
     </h3>
     <h3 className="blog__h3" >
       <span className="blog__span--label">Blog: </span>
-      <a className="blog__span" href={user.get('blog')} >{user.get('blog')}</a>
+      <a
+        className="blog__span"
+        href={user.get('blog')}
+        target="_blank"
+      >
+        {user.get('blog')}
+      </a>
     </h3>
   </div>
 );

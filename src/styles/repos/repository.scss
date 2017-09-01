@@ -1,0 +1,36 @@
+.repository__div--container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border: black;
+  border-top-style: groove;
+  padding: 20px 10px 20px 10px;
+}
+
+.repository__div--container:last-child {
+  border-bottom-style: groove;
+}
+
+.repository__a--title {
+  font-size: 26px;
+  box-sizing: border-box;
+  color: #24292e;
+  text-decoration: none;
+  align-self: center;
+  font-weight: bold;
+  width: 90%;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.repository__span--description {
+  align-self: center;
+  display: block;
+  font-size: 20px;
+  font-style: normal;
+  box-sizing: border-box;
+  color: #666;
+  padding: 0 10px 0 10px;
+}

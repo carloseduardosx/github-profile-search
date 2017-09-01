@@ -7,7 +7,6 @@ import { callNames } from '../../api';
 import { connectivity, user } from '../../redux/modules';
 
 class Home extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -33,7 +32,7 @@ class Home extends Component {
   render(props) {
     return (
       <div className="home__div--container">
-        <SearchInput placeholder="Username" onInput={this.onInputChange} />
+        <SearchInput placeholder="Username" onInput={this.onInputChange} value={this.state.search} />
         <Button label="Search" onClick={this.onSearchRequested(props)} />
       </div>
     );

@@ -5,7 +5,7 @@
 /.vscode/chrome
 
 # production
-/dist
+/github-profile-search
 
 # misc
 .DS_Store

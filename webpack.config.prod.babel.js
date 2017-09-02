@@ -12,7 +12,7 @@ import PurifyCSSPlugin from 'purifycss-webpack';
 
 const htmlPath = path.resolve(__dirname, 'public/index.prod.html');
 const appPath = path.resolve(__dirname, 'src/index.jsx');
-const buildPath = path.resolve(__dirname, 'dist');
+const buildPath = path.resolve(__dirname, 'github-profile-search');
 
 const config = {
   entry: {
@@ -126,7 +126,7 @@ const config = {
       filename: 'service-worker.js',
       navigateFallback: 'index.html',
       mergeStaticsConfig: false,
-      staticFileGlobsIgnorePatterns: [/\.map$/, /\.DS_Store/, /icons/],
+      staticFileGlobsIgnorePatterns: [/\.map$/, /\.DS_Store/],
       runtimeCaching: [
         {
           urlPattern: '/',

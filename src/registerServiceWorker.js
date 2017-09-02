@@ -1,7 +1,7 @@
 const registerServiceWorker = () => {
   if ('serviceWorker' in navigator && location.protocol === 'https:') {
     console.log('Starting service worker...');
-    navigator.serviceWorker.register('/service-worker.js', { scope: './' })
+    navigator.serviceWorker.register('/service-worker.js')
       .then((reg) => {
         console.log('Done. Now you\'re running offline.');
         reg.onupdatefound = () => { // eslint-disable-line

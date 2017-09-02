@@ -20,7 +20,8 @@ const config = {
   },
   output: {
     path: buildPath,
-    filename: '[name].bundle.js'
+    filename: '[name].bundle.js',
+    publicPath: '/github-profile-search/'
   },
   devServer: {
     contentBase: path.resolve(__dirname, 'src'),

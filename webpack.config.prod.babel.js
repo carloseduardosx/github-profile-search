@@ -1,12 +1,15 @@
 import autoprefixer from 'autoprefixer';
+import glob from 'glob';
 import path from 'path';
 import webpack from 'webpack';
 import DashboardPlugin from 'webpack-dashboard/plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import HtmlWebpackHarddiskPlugin from 'html-webpack-harddisk-plugin';
 import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
 import HtmlWebpackInlineSourcePlugin from 'html-webpack-inline-source-plugin';
 import WebpackOnBuildPlugin from 'on-build-webpack';
+import SWPrecache from 'sw-precache-webpack-plugin';
+import PurifyCSSPlugin from 'purifycss-webpack';
+
 
 const htmlPath = path.resolve(__dirname, 'public/index.prod.html');
 const appPath = path.resolve(__dirname, 'src/index.jsx');
@@ -95,17 +98,22 @@ const config = {
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.optimize.ModuleConcatenationPlugin(),
+    new webpack.optimize.OccurrenceOrderPlugin(true),
     new HtmlWebpackPlugin({
       inject: true,
       template: htmlPath,
-      inlineSource: 'app.bundle.js'
+      filename: 'index.html',
+      inlineSource: 'app.bundle.js',
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true
+      },
     }),
-    new HtmlWebpackHarddiskPlugin(),
     new HtmlWebpackInlineSourcePlugin(),
     new FaviconsWebpackPlugin({
       logo: path.resolve(__dirname, 'public/logo.png'),
-      prefix: 'icons-[hash]/',
-      statsFilename: 'iconstats-[hash].json',
+      prefix: 'icons/',
+      statsFilename: 'iconstats.json',
       persistentCache: true,
       inject: true,
       title: 'GitHub Profile Search',
@@ -114,6 +122,45 @@ const config = {
         appleIcon: true,
         appleStartup: true,
         favicons: true
+      }
+    }),
+    new PurifyCSSPlugin({
+      paths: glob.sync(path.join(__dirname, '*.(html|js)')),
+      verbose: true,
+      purifyOptions: {
+        minify: true
+      }
+    }),
+    new SWPrecache({
+      cacheId: 'github-profile-search',
+      minify: true,
+      skipWaiting: true,
+      filename: 'service-worker.js',
+      navigateFallback: 'index.html',
+      mergeStaticsConfig: false,
+      staticFileGlobsIgnorePatterns: [/\.map$/, /\.DS_Store/, /icons/],
+      runtimeCaching: [
+        {
+          urlPattern: '/',
+          handler: 'cacheFirst',
+        }
+      ]
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      output: {
+        comments: 0
+      },
+      sourceMap: false,
+      compress: {
+        unused: 1,
+        warnings: 1,
+        comparisons: 1,
+        conditionals: 1,
+        negate_iife: 1,
+        dead_code: 1,
+        if_return: 1,
+        join_vars: 1,
+        evaluate: 1
       }
     }),
     new WebpackOnBuildPlugin((stats) => !stats.compilation.errors.length && process.exit(0))

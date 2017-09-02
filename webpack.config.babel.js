@@ -11,7 +11,7 @@ const appPath = path.resolve(__dirname, 'src/index.jsx');
 const buildPath = path.resolve(__dirname, 'dist');
 
 const config = {
-  devtool: 'eval-source-map',
+  devtool: 'eval',
   entry: {
     app: appPath
   },

@@ -2,7 +2,6 @@ import autoprefixer from 'autoprefixer';
 import glob from 'glob';
 import path from 'path';
 import webpack from 'webpack';
-import DashboardPlugin from 'webpack-dashboard/plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
 import HtmlWebpackInlineSourcePlugin from 'html-webpack-inline-source-plugin';
@@ -94,21 +93,9 @@ const config = {
     ],
   },
   plugins: [
-    new DashboardPlugin(),
     new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
     new webpack.optimize.ModuleConcatenationPlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(true),
-    new HtmlWebpackPlugin({
-      inject: true,
-      template: htmlPath,
-      filename: 'index.html',
-      inlineSource: 'app.bundle.js',
-      minify: {
-        collapseWhitespace: true,
-        removeComments: true
-      },
-    }),
     new HtmlWebpackInlineSourcePlugin(),
     new FaviconsWebpackPlugin({
       logo: path.resolve(__dirname, 'public/logo.png'),
@@ -162,6 +149,16 @@ const config = {
         join_vars: 1,
         evaluate: 1
       }
+    }),
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: htmlPath,
+      filename: 'index.html',
+      inlineSource: 'app.bundle.js',
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true
+      },
     }),
     new WebpackOnBuildPlugin((stats) => !stats.compilation.errors.length && process.exit(0))
   ]

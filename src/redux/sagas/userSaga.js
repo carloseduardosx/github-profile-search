@@ -20,7 +20,7 @@ function* fetchUserNotes({ payload: { args: { userName } } }) {
 }
 
 function* redirectToProfileAndFetchDependencies(action) {
-  route('/profile');
+  route('/github-profile-search/profile');
   yield call(fetchUserRepositories, action);
   yield call(fetchUserNotes, action);
 }

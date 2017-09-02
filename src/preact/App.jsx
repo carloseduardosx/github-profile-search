@@ -10,10 +10,10 @@ const App = () => (
   <div>
     <Toolbar />
     <Router>
-      <Home default path="/github-profile-search" />
-      <Profile path="/github-profile-search/profile" />
-      <Repos path="/github-profile-search/repos" />
-      <Notes path="/github-profile-search/notes" />
+      <Home default path="/" />
+      <Profile path="/profile" />
+      <Repos path="/repos" />
+      <Notes path="/notes" />
     </Router>
   </div>
 );

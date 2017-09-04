@@ -9,17 +9,17 @@
   "theme_color": "#5264AE",
   "icons": [
     {
-      "src": "/static/logo.png",
+      "src": "/github-profile-search/static/logo.png",
       "sizes": "144x144",
       "type": "image/png"
     },
     {
-      "src": "/static/logo.png",
+      "src": "/github-profile-search/static/logo.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/static/logo.png",
+      "src": "/github-profile-search/static/logo.png",
       "sizes": "512x512",
       "type": "image/png"
     }

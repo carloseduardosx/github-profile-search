@@ -7,7 +7,7 @@ import './styles/index.scss';
 
 const rootElement = document.getElementById('root');
 
-root.removeChild(rootElement.childNodes[0]);
+rootElement.removeChild(document.getElementById('loading'));
 registerServiceWorker();
 render(
   <Provider store={store}>

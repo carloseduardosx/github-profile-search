@@ -3,7 +3,7 @@
   "short_name": "GH Profile Search",
   "description": "Search for developers on the biggest developer community in the world",
   "lang": "en-US",
-  "start_url": "/github-profile-search",
+  "start_url": "/github-profile-search/",
   "display": "standalone",
   "orientation": "portrait",
   "theme_color": "#5264AE",

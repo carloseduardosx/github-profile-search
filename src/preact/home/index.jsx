@@ -17,11 +17,14 @@ class Home extends Component {
 
   onSearchRequested({ requestApiCallAction }) {
     return () => {
-      requestApiCallAction(
-        callNames.FETCH_USER,
-        { userName: this.state.search },
-        user.actions.FETCH_USER
-      );
+      const userName = this.state.search;
+      if (userName.trim().length) {
+        requestApiCallAction(
+          callNames.FETCH_USER,
+          { userName: this.state.search.toLowerCase() },
+          user.actions.FETCH_USER
+        );
+      }
     };
   }
 

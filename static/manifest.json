@@ -1,0 +1,18 @@
+{
+  "name": "GitHub Profile Search",
+  "short_name": "GH Profile Search",
+  "lang": "en-US",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#5264AE",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/static/logo.png"
+    },
+    {
+      "src": "/static/logo.png",
+      "sizes": "512x512"
+    }
+  ]
+}

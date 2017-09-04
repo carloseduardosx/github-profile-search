@@ -55,6 +55,8 @@
     "preact-transition-group": "^1.1.1",
     "purify-css": "^1.2.5",
     "purifycss-webpack": "^0.7.0",
+    "redux-test-store": "^0.5.0",
+    "redux-thunk": "^2.2.0",
     "sass-loader": "^6.0.6",
     "style-loader": "0.18.2",
     "sw-precache-webpack-plugin": "^0.11.4",

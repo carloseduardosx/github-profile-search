@@ -1,9 +1,13 @@
 
 import { h } from 'preact';
-import { mount } from 'enzyme';
+import { mountWith, getTestStore } from '../../../test/helpers';
 import Home from '../../home';
 
-xit('renders without crashing', () => {
-  const div = document.createElement('div');
-  mount(<Home />, div);
+it('renders without crashing', (done) => {
+  getTestStore(done)
+    .then(testStore => {
+      const Home = mountWith(<Home />, testStore);
+      console.log('TESTING', Home);
+      done();
+    }).catch(done);
 });

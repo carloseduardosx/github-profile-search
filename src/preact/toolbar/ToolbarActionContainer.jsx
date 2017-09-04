@@ -1,9 +1,9 @@
 import { h } from 'preact';
 
-const HeaderTabs = ({ children }) => (
+const ToolbarActionContainer = ({ children }) => (
   <div className="tabs__div--container">
     {children}
   </div>
 );
 
-export default HeaderTabs;
+export default ToolbarActionContainer;

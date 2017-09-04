@@ -1,17 +1,16 @@
 import { h } from 'preact';
-import Header from './Header';
-import HeaderTab from './HeaderTab';
-import HeaderTabs from './HeaderTabs';
-import HeaderTitle from './HeaderTitle';
+import ToolbarTitle from './ToolbarTitle';
+import ToolbarAction from './ToolbarAction';
+import ToolbarActionContainer from './ToolbarActionContainer';
 
 const Toolbar = () => (
-  <Header>
-    <HeaderTitle label="GitHub Profile Search" />
-    <HeaderTabs>
-      <HeaderTab path="/repos" label="REPOS" />
-      <HeaderTab path="/notes" label="NOTES" />
-    </HeaderTabs>
-  </Header>
+  <div className="navbar__div">
+    <ToolbarTitle label="GitHub Profile Search" />
+    <ToolbarActionContainer>
+      <ToolbarAction path="/repos" label="REPOS" />
+      <ToolbarAction path="/notes" label="NOTES" />
+    </ToolbarActionContainer>
+  </div>
 );
 
 export default Toolbar;

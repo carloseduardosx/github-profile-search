@@ -1,7 +1,7 @@
 import { h } from 'preact';
 import { Link } from 'preact-router/match';
 
-const HeaderTab = ({ path, label }) => (
+const ToolbarAction = ({ path, label }) => (
   <Link
     className="header__link--tab"
     href={path}
@@ -11,4 +11,4 @@ const HeaderTab = ({ path, label }) => (
   </Link>
 );
 
-export default HeaderTab;
+export default ToolbarAction;

@@ -7,8 +7,8 @@ const Toolbar = () => (
   <div className="navbar__div">
     <ToolbarTitle label="GitHub Profile Search" />
     <ToolbarActionContainer>
-      <ToolbarAction path="/repos" label="REPOS" />
-      <ToolbarAction path="/notes" label="NOTES" />
+      <ToolbarAction path="/github-profile-search/repos" label="REPOS" />
+      <ToolbarAction path="/github-profile-search/notes" label="NOTES" />
     </ToolbarActionContainer>
   </div>
 );

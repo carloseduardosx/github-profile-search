@@ -16,7 +16,8 @@ const config = {
   },
   output: {
     path: buildPath,
-    filename: '[name].bundle.js'
+    filename: '[name].bundle.js',
+    publicPath: '/github-profile-search/'
   },
   devServer: {
     overlay: true,
@@ -105,7 +106,7 @@ const config = {
     new BrowserSyncPlugin({
       host: 'localhost',
       port: 3000,
-      proxy: 'http://localhost:3100/'
+      proxy: 'http://localhost:3100/github-profile-search/'
     },
     {
       reload: false

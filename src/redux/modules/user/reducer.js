@@ -12,7 +12,7 @@ export const reducer = (state = initialState, { type, payload }) => {
         notes: payload.data || []
       });
     case actions.STORE_USER_NOTE.SUCCEEDED:
-      return state.mergeIn(['notes'], [payload.data]);
+      return state.set('notes', state.get('notes').push(asImmutable(payload.data)));
     case actions.FETCH_REPOSITORIES.SUCCEEDED:
       return state.merge({
         repositories: payload.data || []

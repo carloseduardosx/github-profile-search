@@ -7,6 +7,7 @@
   "display": "standalone",
   "orientation": "portrait",
   "theme_color": "#5264AE",
+  "background_color": "#FFF",
   "icons": [
     {
       "src": "/github-profile-search/static/logo.png",

@@ -1,18 +1,22 @@
 {
   "name": "GitHub Profile Search",
   "short_name": "GH Profile Search",
+  "description": "Search for developers on the biggest developer community in the world",
   "lang": "en-US",
   "start_url": "/",
   "display": "standalone",
-  "theme_color": "#5264AE",
   "orientation": "portrait",
+  "theme_color": "#5264AE",
   "icons": [
     {
-      "src": "/static/logo.png"
+      "src": "/static/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
     },
     {
       "src": "/static/logo.png",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ]
 }

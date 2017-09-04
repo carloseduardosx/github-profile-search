@@ -25,18 +25,21 @@ class Notes extends Component {
 
   onSubmitNote({ requestApiCallAction, userName, notes }) {
     return () => {
-      requestApiCallAction(
-        callNames.STORE_NOTE,
-        {
-          userName,
-          message: this.state.noteText,
-          noteId: notes.size
-        },
-        user.actions.STORE_USER_NOTE
-      );
-      this.setState({
-        noteText: ''
-      });
+      const message = this.state.noteText.trim();
+      if (message.length) {
+        requestApiCallAction(
+          callNames.STORE_NOTE,
+          {
+            userName,
+            message,
+            noteId: notes.size
+          },
+          user.actions.STORE_USER_NOTE
+        );
+        this.setState({
+          noteText: ''
+        });
+      }
     };
   }
 

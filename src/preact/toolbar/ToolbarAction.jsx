@@ -3,7 +3,8 @@ import { Link } from 'preact-router/match';
 
 const ToolbarAction = ({ path, label }) => (
   <Link
-    className="header__link--tab"
+    activeClassName="toolbar__link--tab-active"
+    className="toolbar__link--tab"
     href={path}
     rel="noopener"
   >

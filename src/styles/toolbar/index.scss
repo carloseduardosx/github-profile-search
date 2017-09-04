@@ -1,4 +1,11 @@
-@import './header.scss';
-@import './headerTitle.scss';
-@import './headerTab.scss';
-@import './headerTabs.scss';
+@import './toolbarAction';
+@import './toolbarActionContainer.scss';
+@import './toolbarTitle.scss';
+
+.toolbar__div {
+  overflow: hidden;
+  background-color: #5264AE;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}

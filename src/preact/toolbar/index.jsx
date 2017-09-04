@@ -4,7 +4,7 @@ import ToolbarAction from './ToolbarAction';
 import ToolbarActionContainer from './ToolbarActionContainer';
 
 const Toolbar = () => (
-  <div className="navbar__div">
+  <div className="toolbar__div">
     <ToolbarTitle label="GitHub Profile Search" />
     <ToolbarActionContainer>
       <ToolbarAction path="/github-profile-search/repos" label="REPOS" />

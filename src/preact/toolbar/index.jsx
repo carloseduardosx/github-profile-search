@@ -10,6 +10,7 @@ const Toolbar = ({ username }) => (
   <div className="toolbar__div">
     <ToolbarTitle label="GitHub Profile Search" />
     <ToolbarActionContainer>
+      <ToolbarAction path={username ? '/github-profile-search/profile' : ''} label="PROFILE" />
       <ToolbarAction path={username ? '/github-profile-search/repos' : ''} label="REPOS" />
       <ToolbarAction path={username ? '/github-profile-search/notes' : ''} label="NOTES" />
     </ToolbarActionContainer>

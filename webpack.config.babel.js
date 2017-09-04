@@ -3,10 +3,9 @@ import path from 'path';
 import webpack from 'webpack';
 import DashboardPlugin from 'webpack-dashboard/plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import HtmlWebpackHarddiskPlugin from 'html-webpack-harddisk-plugin';
 import BrowserSyncPlugin from 'browser-sync-webpack-plugin';
 
-const htmlPath = path.resolve(__dirname, 'public/index.html');
+const htmlPath = path.resolve(__dirname, 'index.html');
 const appPath = path.resolve(__dirname, 'src/index.jsx');
 const buildPath = path.resolve(__dirname, 'dist');
 
@@ -98,7 +97,6 @@ const config = {
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.optimize.ModuleConcatenationPlugin(),
-    new HtmlWebpackHarddiskPlugin(),
     new HtmlWebpackPlugin({
       inject: true,
       template: htmlPath,

@@ -3,16 +3,16 @@ import glob from 'glob';
 import path from 'path';
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
 import HtmlWebpackInlineSourcePlugin from 'html-webpack-inline-source-plugin';
 import WebpackOnBuildPlugin from 'on-build-webpack';
 import SWPrecache from 'sw-precache-webpack-plugin';
 import PurifyCSSPlugin from 'purifycss-webpack';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 
-const htmlPath = path.resolve(__dirname, 'public/index.prod.html');
+const htmlPath = path.resolve(__dirname, 'index.html');
 const appPath = path.resolve(__dirname, 'src/index.jsx');
-const buildPath = path.resolve(__dirname, 'github-profile-search');
+const buildPath = path.resolve(__dirname, 'dist');
 
 const config = {
   entry: {
@@ -98,18 +98,9 @@ const config = {
     new webpack.optimize.ModuleConcatenationPlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(true),
     new HtmlWebpackInlineSourcePlugin(),
-    new FaviconsWebpackPlugin({
-      logo: path.resolve(__dirname, 'public/logo.png'),
-      prefix: 'icons/',
-      statsFilename: 'iconstats.json',
-      persistentCache: true,
-      inject: true,
-      title: 'GitHub Profile Search',
-      icons: {
-        android: true,
-        appleIcon: true,
-        appleStartup: true,
-        favicons: true
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production')
       }
     }),
     new PurifyCSSPlugin({
@@ -119,6 +110,10 @@ const config = {
         minify: true
       }
     }),
+    new CopyWebpackPlugin([{
+      from: 'static',
+      to: 'static'
+    }]),
     new SWPrecache({
       cacheId: 'github-profile-search',
       minify: true,

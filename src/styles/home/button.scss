@@ -12,14 +12,14 @@
   border-radius: 2px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
   
-  background-color: #5264AE;
+  background-color: $main-color;
   color: #ecf0f1;
   
   transition: background-color .3s;
 }
 
 .button--material:hover, .button--material:focus {
-  background-color: #405196;
+  background-color: $highlighted-main-color;
 }
 
 .button--material > * {

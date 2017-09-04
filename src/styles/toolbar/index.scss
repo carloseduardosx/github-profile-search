@@ -4,8 +4,13 @@
 
 .toolbar__div {
   overflow: hidden;
-  background-color: #5264AE;
+  background-color: $main-color;
   position: fixed;
   top: 0;
   width: 100%;
+  height: $toolbar-size;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0.5px 3px 5px 0 rgba(0,0,0,0.4);
 }

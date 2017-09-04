@@ -12,13 +12,13 @@
 }
 
 .repository__a--title {
-  font-size: 26px;
+  font-size: $row-border-title-font-size;
   box-sizing: border-box;
   color: #24292e;
   text-decoration: none;
   align-self: center;
   font-weight: bold;
-  width: 90%;
+  width: $row-title-width;
   text-align: center;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -28,7 +28,7 @@
 .repository__span--description {
   align-self: center;
   display: block;
-  font-size: 20px;
+  font-size: $row-description-font-size;
   font-style: normal;
   box-sizing: border-box;
   color: #666;

@@ -5,7 +5,9 @@ import SearchInput from './SearchInput';
 import Button from './Button';
 import { callNames } from '../../api';
 import { connectivity, user } from '../../redux/modules';
+import pureComponent from '../../helper/componentHelper';
 
+@pureComponent
 class Home extends Component {
   constructor(props) {
     super(props);

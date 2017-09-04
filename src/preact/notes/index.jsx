@@ -6,7 +6,9 @@ import { callNames } from '../../api';
 import { asJS } from '../../helper/immutableHelper';
 import NotesForm from './NotesForm';
 import Note from './Note';
+import pureComponent from '../../helper/componentHelper';
 
+@pureComponent
 class Notes extends Component {
   constructor(props) {
     super(props);

@@ -5,6 +5,6 @@ export const getTestStore = (done, initialState = {}) => createReduxStore(initia
   .then(store => createTestStore(store, done))
   .then(store => {
     // eslint-disable-next-line no-param-reassign
-    store.selec = selector => selector(store.getState());
+    store.select = selector => selector(store.getState());
     return store;
   });

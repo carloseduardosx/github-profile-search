@@ -71,7 +71,7 @@
     "start": "webpack-dashboard -- webpack-dev-server",
     "build": "webpack --config webpack.config.prod.babel.js",
     "test": "jest --config jest.config.json --coverage",
-    "test:watch": "jest --config jest.config.json --watch",
+    "test:watch": "jest --config jest.config.json --watchAll",
     "test:codecov": "yarn run test && ./scripts/send_codecov_reports.sh",
     "deploy": "yarn build && gh-pages -d dist"
   }

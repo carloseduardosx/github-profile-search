@@ -1,6 +1,6 @@
 {
   "name": "GitHub Profile Search",
-  "short_name": "GH Profile Search",
+  "short_name": "GH Profile",
   "description": "Search for developers on the biggest developer community in the world",
   "lang": "en-US",
   "start_url": "/github-profile-search/",

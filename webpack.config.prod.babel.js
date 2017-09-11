@@ -110,10 +110,16 @@ const config = {
         minify: true
       }
     }),
-    new CopyWebpackPlugin([{
-      from: 'static',
-      to: 'static'
-    }]),
+    new CopyWebpackPlugin([
+      {
+        from: 'static',
+        to: 'static'
+      },
+      {
+        from: '404.html',
+        to: '.'
+      }
+    ]),
     new SWPrecache({
       cacheId: 'github-profile-search',
       minify: true,

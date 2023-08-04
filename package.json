@@ -7,7 +7,7 @@
     "immutable": "^3.8.1",
     "preact": "^8.2.5",
     "preact-redux": "^2.0.2",
-    "preact-router": "^2.5.6",
+    "preact-router": "^2.6.1",
     "redux": "^3.7.2",
     "redux-immutable": "^4.0.0",
     "redux-saga": "^0.15.6",

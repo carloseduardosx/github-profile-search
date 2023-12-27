@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "axios": "^0.16.2",
+    "axios": "^1.6.3",
     "immutable": "^3.8.1",
     "preact": "^8.2.5",
     "preact-redux": "^2.0.2",
